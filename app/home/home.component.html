@@ -1,0 +1,34 @@
+<ActionBar title="Ez Bank">
+</ActionBar>
+
+<GridLayout rows="auto, auto, *">
+    <StackLayout row="0" class="current-balance-area">
+        <Label text="Current Balance" class="h3 description-label white-label"
+            horizontalAlignment="center"></Label>
+        <div *ngIf="currentBalance">
+            <Label class="h1 white-label" horizontalAlignment="center"
+                text="{{ currentBalance | currency}}">
+            </Label>
+        </div>
+        <ActivityIndicator [busy]="isLoading"
+            [visibility]="isLoading ? 'visible' : 'collapse'"
+            horizontalAlignment="center" verticalAlignment="center">
+        </ActivityIndicator>
+    </StackLayout>
+
+    <StackLayout row="1" class="make-payment-area">
+        <TextField hint="Enter Amount" [(ngModel)]="payment.amount"
+            class="payment-input input input-border" keyboardType="number"> </TextField>
+        <Button class="btn btn-primary" text="Make Payment" (tap)="onMakePaymentTap()"></Button>
+    </StackLayout>
+
+    <StackLayout row="2" class="completed-payments">
+        <ListView height="5000" [items]="completedPayments">
+            <ng-template let-payment="item" let-odd="odd" let-even="even">
+                <Label class="list-view-label"
+                    text="Amount Paid: {{ payment.amount | currency }}">
+                </Label>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+</GridLayout>

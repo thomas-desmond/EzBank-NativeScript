@@ -1,0 +1,33 @@
+
+.current-balance-area {
+    justify-content: center;
+    background-color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px;
+}
+
+.make-payment-area {
+    background-color: gainsboro;
+}
+
+.payment-input {
+    font-size: 20;
+}
+
+.white-label {
+    color: white;
+}
+
+.list-view-label {
+    font-size: 25;
+}
+
+.odd-list-item {
+    background-color: azure;
+    font-size: 10;
+}
+
+.even-list-item {
+    background-color: aliceblue;
+    font-size: 10;
+}
